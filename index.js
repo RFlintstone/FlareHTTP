@@ -28,6 +28,15 @@ nunjucks(APP, {
   }
 });
 
+// Turn on caching
+const setCache = function (req, res, next) {
+  const period = 60*5 // Cache life is 5 minutes
+  if (req.method == 'GET') res.set('Cache-control', `public, max-age=${period}`);
+  else res.set('Cache-control', `no-store`);
+  next();
+}
+APP.use(setCache);
+
 // Register all controllers dynamically
 const CONTROLLERS = new Glob('**/controllers/**/**.js', { withFileTypes: true })
 CONTROLLERS.stream().on('data', path => {

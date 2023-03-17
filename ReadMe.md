@@ -15,9 +15,9 @@ An open source MVC project
 
 ## Prerequisites
 
-![Node](https://badgen.net/badge/Node/v16.13.0/green?icon=npm)
+![Node](https://badgen.net/badge/Node/v18.15.0/green?icon=npm)
 ![NPM](https://badgen.net/badge/Npm/v9.6.1/green?icon=npm)
-![Docker](https://badgen.net/badge/Docker/v20.10.14/cyan?icon=docker)
+![Docker](https://badgen.net/badge/Docker/v20.10.23/cyan?icon=docker)
 
 > **Note**
 > Although not tested, higher or lower versions may work.

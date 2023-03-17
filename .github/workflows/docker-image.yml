@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: set lower case owner name
+      run: echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+      env: 
+        OWNER: ${{ github.repository_owner }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag rflintstone/${{ github.repository }}:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ OWNER_LC }}:$(date +%s)

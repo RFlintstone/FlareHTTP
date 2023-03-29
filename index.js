@@ -1,4 +1,5 @@
 require('dotenv').config();                                         // Config
+require('./src/models/firebase/init/setupFirebase').initFirestore();// Load Firestore
 const express = require('express');                                 // Our HTTP(s) service
 const nunjucks = require('express-nunjucks');                       // Connect express and nunjucks to each other
 const routes = require('./src/routers/routes');                     // Our route file
@@ -9,6 +10,7 @@ const path = require("path");                                       // Get the p
 const IS_DEV = process.env.NODE_ENV === 'development';
 console.log('Development mode?:', IS_DEV);
 console.log("Starting in " + process.env.NODE_ENV + " mode...")
+
 
 // Initialize express
 const APP = express();

@@ -1,3 +1,5 @@
+const messages = require('../../../statusMessages.json');
+
 async function fetchDataByParam(collection, paramId, paramField) {
     // Make sure we have the right reference
     const db = await require('../init/setupFirebase').getDB();
@@ -10,10 +12,10 @@ async function fetchDataByParam(collection, paramId, paramField) {
     let res;
     if (doc.exists && doc.data()[paramField] !== undefined) {
         res = {data: doc.data()[paramField]}
-    } else if (paramField == undefined) {
+    } else if (paramField === undefined) {
         res = {data: doc.data()}
     } else {
-        res = {data: 'null'}
+        res = {data: messages.fetchParam.failed}
     }
 
     return res;

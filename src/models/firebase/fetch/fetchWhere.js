@@ -1,3 +1,5 @@
+const messages = require('../../../statusMessages.json');
+
 async function fetchDataByWhere(collection, paramId, operator, paramField) {
     // Make sure we have the right reference
     const db = await require('../init/setupFirebase').getDB();
@@ -13,7 +15,7 @@ async function fetchDataByWhere(collection, paramId, operator, paramField) {
             res.push(doc.data());
         });
     } else {
-        res = {data: 'null'}
+        res = {data: messages.fetchWhere.failed}
     }
 
     return res;

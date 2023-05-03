@@ -1,0 +1,12 @@
+{
+  "insert": {
+    "failed": "failed inserting/updating data",
+    "sucess": "success"
+  },
+  "fetchWhere": {
+    "failed": "no data"
+  },
+  "fetchParam": {
+    "failed": "no data"
+  }
+}

@@ -30,8 +30,10 @@ An open source MVC project
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`EXPRESS_IP`,
-`EXPRESS_PORT`
+`EXPRESS_IP={ip}`,
+`EXPRESS_PORT={port}`
+`VIEW_ENABLED={true||false}`
+`API_ENABLED={true||false}`
 
 If you deploy the project make sure the `EXPRESS_PORT` matches the port of the container. The value of `EXPRESS_IP` is recommended to be set to `127.0.0.1` if you dont know the ip.
 ## Run Locally

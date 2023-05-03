@@ -1,4 +1,4 @@
-async function fetchData(collection, orderBy, direction) {
+async function fetchData(collection) {
     const db = await require('../init/setupFirebase').getDB();
     const citiesRef = db.collection(collection);
     const snapshot = await citiesRef.get();

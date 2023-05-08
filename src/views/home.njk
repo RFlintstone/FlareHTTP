@@ -3,5 +3,45 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-    <a href="/api/v1/ping">Click for /api/v1/ping</a>
+    <b>[GET] Views</b><br>
+    <hr>
+    <strong>Homepage (Current):</strong><a href="/">
+    <pre>Click for /</pre>
+</a><br>
+
+    <b>[GET] Test</b><br>
+    <hr>
+    <strong>Ping:</strong><a href="/api/v1/ping">
+    <pre>Click for /api/v1/ping</pre>
+</a><br>
+
+    <b>[GET] Fetch</b><br>
+    <hr>
+    <strong>Fetch all data:</strong><a href="/api/v1/fetch">
+    <pre>Click for /api/v1/fetch</pre>
+</a><br>
+    <strong>Fetch by collection id:</strong><a href="/api/v1/fetch/NL30INGB5361965189/first_name">
+    <pre>Click for /api/v1/fetch/NL30INGB5361965189/first_name</pre>
+</a><br>
+    <strong>Fetch by operator:</strong><a href="/api/v1/fetch/first_name/==/John">
+    <pre>Click for /api/v1/fetch/first_name/==/John</pre>
+</a><br>
+
+    <b>[POST] Insert</b><br>
+    <hr>
+    <strong>Insert data:</strong><a><pre>/api/v1/insert</pre></a>
+    <strong>with JSON body:</strong>
+    <pre>
+    {
+        "name":"data",
+        "id":"newCollectionID",
+        "body": {
+            "first_name": "a_first_name",
+            "last_name": "a_last_name",
+            "age": 101,
+            "email": "an_email",
+            "iban": "an_iban_number"
+        }
+    }
+    </pre>
 {% endblock %}

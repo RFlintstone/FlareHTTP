@@ -8,18 +8,9 @@ async function timestamp() {
 }
 
 async function insertData(collection, newID, body) {
-    let json = {
-        first_name: body.first_name,
-        last_name: body.last_name,
-        age: body.age,
-        email: body.email,
-        iban: body.iban,
-        pin: body.pin,
-        balance: body.balance,
-        time: await timestamp()
-    }
-
-    console.log(json)
+    // Set timestamp and log body
+    body.time = await timestamp();
+    console.log(body);
 
     // Make sure we have the right reference
     const db = await require('../init/setupFirebase').getDB();
@@ -29,7 +20,7 @@ async function insertData(collection, newID, body) {
 
     // Insert the data in the newly created document
     let state;
-    await Ref.set(json)
+    await Ref.set(body, {merge: true})
         .then(() => {
             // Log our document id
             console.log('Added/updated document with id', newID);

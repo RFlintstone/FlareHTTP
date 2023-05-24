@@ -14,6 +14,7 @@ async function insertData(collection, newID, body) {
         age: body.age,
         email: body.email,
         iban: body.iban,
+        pin: body.pin,
         balance: body.balance,
         time: await timestamp()
     }
